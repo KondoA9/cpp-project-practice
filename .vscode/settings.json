@@ -1,0 +1,14 @@
+{
+    "editor.formatOnSave": false,
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+    "C_Cpp.autoAddFileAssociations": false,
+    "files.associations": {
+        ".clang-format": "yaml",
+        "*.ipp": "cpp"
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+}
