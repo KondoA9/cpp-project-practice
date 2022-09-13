@@ -18,4 +18,4 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Lint
-        run: find src/ -iname *.hpp -o -iname *.cpp | xargs clang-tidy --dry-run --format-style='file'
+        run: find src/ -iname *.hpp -o -iname *.cpp | xargs clang-tidy --format-style='file'
