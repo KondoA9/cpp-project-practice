@@ -5,6 +5,6 @@
 int main() {
     Module::sayHello();
 
-    int k = 100;
+    int k = (int)100.0;
     std::cout << "k is " << k << std::endl;
 }
