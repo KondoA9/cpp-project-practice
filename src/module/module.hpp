@@ -2,6 +2,6 @@
 
 namespace Module {
     void sayHello() {
-        std::cout << "Hello"<< std::endl;
+        std::cout << "Hello" << std::endl;
     }
 }
