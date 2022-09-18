@@ -1,0 +1,30 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+    - name: Configure
+      run: cmake ..
+      working-directory: build/
+      
+    - name: Build
+      run: cmake --build test/
+      working-directory: build/
+      
+    - name: Test
+      run: ctest -C debug --test-dir test/
+      working-directory: build/
