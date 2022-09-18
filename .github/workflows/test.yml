@@ -49,6 +49,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: test-result
+          path: coverage
 
       - name: Install lcov
         run: |
@@ -59,9 +60,12 @@ jobs:
 
       - name: Generate coverage.info
         run: lcov -d . -c -o coverage.info
+        working-directory: coverage/
 
       - name: Filter coverage.info
         run: lcov -r coverage.info '*/c++/*' '*/catch2/*' '*/test/*' -o coverage.info
+        working-directory: coverage/
 
       - name: Print coverage
         run: lcov -l coverage.info
+        working-directory: coverage/
