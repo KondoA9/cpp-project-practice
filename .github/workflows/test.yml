@@ -50,6 +50,13 @@ jobs:
         with:
           name: test-result
 
+      - name: Install lcov
+        run: |
+          wget https://github.com/linux-test-project/lcov/releases/download/v1.16/lcov-1.16.tar.gz -O ./lcov-1.16.tar.gz
+          tar xfz ./lcov-1.16.tar.gz -C .
+          cd ./lcov-1.16
+          sudo make install
+
       - name: Generate coverage.info
         run: lcov -d . -c -o coverage.info
 
