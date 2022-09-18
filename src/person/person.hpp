@@ -1,28 +1,23 @@
 #pragma once
 
-#include <iostream>
-
 enum class PersonType { male, female };
 
 class Person {
+private:
     const PersonType m_personType;
 
+    double m_height, m_weight;
+
 public:
-    explicit Person(PersonType personType) : m_personType(personType) {}
+    // height [m]
+    // weight [kg]
+    explicit Person(PersonType personType, double height, double weight);
 
-    void say() const {
-        switch (m_personType) {
-        case PersonType::male:
-            std::cout << "I am male." << std::endl;
-            break;
+    double height() const;
 
-        case PersonType::female:
-            std::cout << "I am female." << std::endl;
-            break;
+    double weight() const;
 
-        default:  // LCOV_EXCL_START
-            std::cout << "Who am I." << std::endl;
-            break;  // LCOV_EXCL_END
-        }
-    }
+    double bmi() const;
+
+    void say() const;
 };

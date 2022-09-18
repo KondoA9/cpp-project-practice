@@ -15,8 +15,15 @@ else()
 	set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wno-unknown-pragmas")
 endif()
 
-set(SOURCE_FILES
-    src/main.cpp
+set(SOURCE_FILES 
+	${PROJECT_SOURCE_DIR}/src/person/person.cpp
+)
+
+file(GLOB_RECURSE SOURCE_FILES src/*.cpp)
+
+include_directories(
+	SYSTEM "deps/"
+	"src/"
 )
 
 add_executable(cpp-project-practice ${SOURCE_FILES})
